@@ -1,0 +1,16 @@
+version: "3.7"
+
+services: 
+    productsdb:
+        environment: 
+            - POSTGRES_PASSWORD=mordekai
+            - POSTGRES_DB=products
+            - POSTGRES_USER=admin
+        ports: 
+            - "5433:5432"
+        image: postgres:10-alpine
+        volumes:
+            - db-data:/var/lib/postgresql/data
+            
+volumes: 
+    db-data:            
